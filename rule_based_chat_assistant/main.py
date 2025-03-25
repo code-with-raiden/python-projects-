@@ -117,7 +117,7 @@ def searchgoogle():
     speak("what should i search for ?")
     search = takecommandmic()
     web.open("https://www.google.com/search?q="+search)
-#https://api.openweathermap.org/data/2.5/weather?q={City Name}&units=imperial&appid=eab849f3e61570f158e219486e135eba
+
 
 
 
