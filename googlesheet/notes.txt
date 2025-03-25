@@ -1,0 +1,94 @@
+📌 Steps to Create a Service Account & Download JSON Key File
+1️⃣ Go to Google Cloud Console
+🔗 https://console.cloud.google.com/apis/credentials
+
+2️⃣ Select a Project (or Create a New One)
+
+Click "Select a project" (top-left) → "New Project"
+
+Give it a name (e.g., Google Sheets API Project)
+
+Click "Create"
+
+3️⃣ Enable Google Sheets API
+
+Go to Google Sheets API
+
+Click "Enable"
+
+4️⃣ Enable Google Drive API (needed for authentication)
+
+Go to Google Drive API
+
+Click "Enable"
+
+5️⃣ Create Service Account
+
+Go to Credentials Page
+
+Click "Create Credentials" → "Service Account"
+
+Fill in:
+
+Service Account Name → (e.g., sheets-access)
+
+Service Account ID → Auto-generated
+
+Description → (optional)
+
+Click "Create & Continue"
+
+6️⃣ Grant Permissions (Optional)
+
+Click "Continue" (No need to add roles)
+
+Click "Done"
+
+7️⃣ Download JSON Key File
+
+Go to Service Accounts
+
+Click on your service account
+
+Go to the "Keys" tab
+
+Click "Add Key" → "Create New Key"
+
+Select JSON format
+
+Click "Create" → JSON file will download automatically
+
+8️⃣ Share Your Google Sheet with the Service Account
+
+Open your Google Sheet
+
+Click "Share"
+
+Copy the Service Account Email (from JSON file)
+
+Paste it into the "Add people and groups" field
+
+Set Editor Access
+
+Click "Send"
+
+✅ Done! Now you can use this JSON file in Python with gspread to access Google Sheets. 🚀
+
+Need help with the Python code? 😊
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Define the scope
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+# Load credentials from JSON file
+creds = ServiceAccountCredentials.from_json_keyfile_name("path/to/your/secure-json-file.json", scope)
+client = gspread.authorize(creds)
+
+# Open the Google Sheet (replace with your actual sheet name)
+sheet = client.open("Your Google Sheet Name").sheet1  # Access first sheet
+
+# Get all data from a specific column (e.g., Column A)
+column_data = sheet.col_values(1)  # Column index starts from 1
+
+print(column_data)  # Output will be a list
