@@ -71,16 +71,6 @@ def withdrawl(acc,pin,amt):
     else:
         print("enter the vaild pin ")
 
-
-        
-
-
-
-
-
-
-
-
 while True:
     print('*'*32)
     print("#######",'welcome to FBI',"#########")
@@ -142,8 +132,3 @@ while True:
         print("enter the amount to withdraw ")
         amt  = int(input('>>>'))
         withdrawl(acc,pin,amt)
-
-
-
-
-
