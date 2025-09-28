@@ -224,48 +224,48 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 speak(f"unable to send mail:{e}")
-        # elif 'message' in query:
-        #     user_name = {
-        #         # Add more contacts here
-        #     }
+        elif 'message' in query:
+            user_name = {
+                # Add more contacts here
+            }
 
-        #     try:
-        #         speak("To whom do you want to send a WhatsApp message?")
-        #         name = takecommandmic().lower()
+            try:
+                speak("To whom do you want to send a WhatsApp message?")
+                name = takecommandmic().lower()
 
-        #         if name in user_name:
-        #             phone_no = user_name[name]
-        #             message = ""
+                if name in user_name:
+                    phone_no = user_name[name]
+                    message = ""
 
-        #             while True:
-        #                 speak("What message do you want to send?")
-        #                 new_msg = takecommandmic()
-        #                 message += " " + new_msg
+                    while True:
+                        speak("What message do you want to send?")
+                        new_msg = takecommandmic()
+                        message += " " + new_msg
 
-        #                 speak(f"Current message: {message}. Do you want to add more text or send it?")
-        #                 speak("Say 'add' to continue adding text, 'send' to send the message, or 'cancel' to discard.")
+                        speak(f"Current message: {message}. Do you want to add more text or send it?")
+                        speak("Say 'add' to continue adding text, 'send' to send the message, or 'cancel' to discard.")
 
-        #                 confirmation = takecommandmic().lower()
+                        confirmation = takecommandmic().lower()
 
-        #                 if 'send' in confirmation:
-        #                     speak("Alright, sending the message now.")
-        #                     sendwhatsmsg(phone_no, message.strip())
-        #                     speak("Message has been sent successfully.")
-        #                     break
-        #                 elif 'cancel' in confirmation:
-        #                     speak("Message sending cancelled.")
-        #                     break
-        #                 elif 'add' in confirmation:
-        #                     speak("Alright, continue adding your message.")
-        #                 else:
-        #                     speak("I didn't understand that. Please say 'add', 'send', or 'cancel'.")
+                        if 'send' in confirmation:
+                            speak("Alright, sending the message now.")
+                            sendwhatsmsg(phone_no, message.strip())
+                            speak("Message has been sent successfully.")
+                            break
+                        elif 'cancel' in confirmation:
+                            speak("Message sending cancelled.")
+                            break
+                        elif 'add' in confirmation:
+                            speak("Alright, continue adding your message.")
+                        else:
+                            speak("I didn't understand that. Please say 'add', 'send', or 'cancel'.")
 
-        #         else:
-        #             speak("I couldn't find that contact. Please add them first.")
+                else:
+                    speak("I couldn't find that contact. Please add them first.")
 
-        #     except Exception as e:
-        #         print(e)
-        #         speak(f"Unable to send the message: {e}")
+            except Exception as e:
+                print(e)
+                speak(f"Unable to send the message: {e}")
        
         elif 'wikipedia' in query:
             try:
