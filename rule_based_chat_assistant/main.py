@@ -340,7 +340,7 @@ if __name__ == "__main__":
         elif 'instagram' in query:
             os.startfile('https://www.instagram.com/')
         elif 'git' in query:
-            path = r"C:\Users\SAGAR\Desktop\git\GitAutoCommit\commit.bat"
+            path = r"ur path"
             os.startfile(path)
             speak('git contrubution done master...!')
 
